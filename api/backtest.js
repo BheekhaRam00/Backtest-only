@@ -1,15 +1,3 @@
-export default function handler(req, res) {
-  // 🔥 CORS FIX
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-
-  // 👇 यहाँ तुम्हारा existing backtest code रहेगा
-}
 import { getMarketData } from "../lib/upstox.js";
 import { runBacktest }   from "../lib/backtest.js";
 import { strategy }      from "../lib/strategy.js";
